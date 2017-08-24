@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FlashcardContentService } from './flashcard-content.service';
-import { FlashcardComponent } from './flashcard.component';
+import { FlashcardContentService } from './flashcard/flashcard-content.service';
+import { FlashcardListComponent } from './flashcard/flashcard-list/flashcard-list.component';
+import { FlashcardSingleComponent } from './flashcard/flashcard-single/flashcard-single.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -12,7 +13,8 @@ import { FlashcardComponent } from './flashcard.component';
   ],
   declarations: [
     AppComponent,
-    FlashcardComponent
+    FlashcardListComponent,
+    FlashcardSingleComponent
   ],
   providers: [FlashcardContentService],
   bootstrap: [AppComponent]

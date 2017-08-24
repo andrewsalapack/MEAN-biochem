@@ -1,0 +1,11 @@
+<div *ngIf="flashcards">
+<p (click)="cardFlip()">
+  {{display}}
+</p>
+<button (click)="nextCardClick()">
+  Next
+</button>
+<button (click)="lastCardClick()">
+  Previous
+</button>
+</div>
