@@ -1,11 +1,11 @@
-<div *ngIf="flashcards">
-<p (click)="cardFlip()">
-  {{display}}
-</p>
-<button (click)="nextCardClick()">
-  Next
-</button>
-<button (click)="lastCardClick()">
-  Previous
-</button>
+<div class="flashcard">
+  <div class ="content" *ngIf="display" (click)="cardFlip()">
+    <p>{{display}}</p>
+  </div>
+  <div class ="bottomButtons">
+    <div class="buttons">
+      <button (click)="lastCardClick()">Previous</button>
+      <button (click)="nextCardClick()">Next</button>
+    </div>
+  </div>
 </div>

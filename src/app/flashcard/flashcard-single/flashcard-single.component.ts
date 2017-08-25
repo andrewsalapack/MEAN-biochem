@@ -4,7 +4,8 @@ import { FlashcardContentService } from '../flashcard-content.service';
 
 @Component({
   selector: 'flashcard-single',
-  templateUrl: './flashcard-single.component.html'
+  templateUrl: './flashcard-single.component.html',
+  styleUrls: ['./flashcard-single.component.css']
 })
 
 
@@ -13,6 +14,7 @@ export class FlashcardSingleComponent implements OnInit {
   frontSideUp: boolean = true;
   currentCard: Flashcard;
   display: string;
+  set: string ;
 
   constructor(private flashcardContentService: FlashcardContentService) { }
   
@@ -50,7 +52,7 @@ export class FlashcardSingleComponent implements OnInit {
   }
 
   getFlashcards(): void {
-    this.flashcardContentService.getFlashcards().then(flashcards => {
+    this.flashcardContentService.getFlashcards(this.set).then(flashcards => {
       this.flashcards = flashcards,
       this.currentCard = this.flashcards[0]
       this.display = this.currentCard.frontContent;
@@ -58,6 +60,7 @@ export class FlashcardSingleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+        this.set = "amino_acids";
         this.getFlashcards();
   }
 }

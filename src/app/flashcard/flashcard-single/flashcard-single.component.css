@@ -1,0 +1,20 @@
+.flashcard {
+    margin: auto;
+    width: 500px;
+}
+.content {
+    border: 2px solid black;
+    text-align: center;
+    font-size: 2em;  
+    height: 170px;
+    padding-top: 80px;
+}
+
+.buttons {
+    display: block;
+    margin: auto;
+    width: 33%;
+    align-content: center;
+    padding-left: 40px;
+    padding-top: 10px;
+}
