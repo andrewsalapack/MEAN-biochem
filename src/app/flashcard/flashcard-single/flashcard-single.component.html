@@ -1,6 +1,7 @@
 <div class="flashcard">
   <div class ="content" *ngIf="display" (click)="cardFlip()">
-    <p>{{display}}</p>
+    <p *ngIf="frontSideUp">{{display}}</p>
+    <a *ngIf="!frontSideUp"> <img src={{display}} /></a>
   </div>
   <div class ="bottomButtons">
     <div class="buttons">

@@ -10,7 +10,7 @@ import { FlashcardContentService } from '../flashcard-content.service';
 
 
 export class FlashcardSingleComponent implements OnInit {
-  flashcards: Flashcard[];
+  deck: Flashcard[];
   frontSideUp: boolean = true;
   currentCard: Flashcard;
   display: string;
@@ -23,10 +23,10 @@ export class FlashcardSingleComponent implements OnInit {
   }
 
   nextCardClick(): void {
-    if (this.currentCard.position + 1 == this.flashcards.length) {
-      this.currentCard = this.flashcards[0]
+    if (this.currentCard.position + 1 == this.deck.length) {
+      this.currentCard = this.deck[0]
     } else {
-    this.currentCard = this.flashcards[this.currentCard.position + 1]
+    this.currentCard = this.deck[this.currentCard.position + 1]
     }
     this.frontSideUp = true;
     this.display = this.currentCard.frontContent;
@@ -34,9 +34,9 @@ export class FlashcardSingleComponent implements OnInit {
 
   lastCardClick(): void {
       if (this.currentCard.position == 0) {
-        this.currentCard = this.flashcards[this.flashcards.length - 1]
+        this.currentCard =this.deck[this.deck.length - 1]
     } else {
-      this.currentCard = this.flashcards[this.currentCard.position - 1]
+      this.currentCard =this.deck[this.currentCard.position - 1]
     }
     this.frontSideUp = true;  
     this.display = this.currentCard.frontContent;
@@ -53,14 +53,15 @@ export class FlashcardSingleComponent implements OnInit {
 
   getFlashcards(): void {
     this.flashcardContentService.getFlashcards(this.set).then(flashcards => {
-      this.flashcards = flashcards,
-      this.currentCard = this.flashcards[0]
+      this.deck = flashcards,
+      this.currentCard =this.deck[0]
+      
       this.display = this.currentCard.frontContent;
     });
   }
 
   ngOnInit(): void {
-        this.set = "amino_acids";
+        this.set = "AminoAcids";
         this.getFlashcards();
   }
 }

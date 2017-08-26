@@ -6,6 +6,11 @@ import { AminoAcids } from './content-data/amino-acids/amino-acids.data';
 @Injectable()
 export class FlashcardContentService {
     getFlashcards(flashcardset): Promise<any> {
-        return Promise.resolve(flashcardset);
+        if (flashcardset == 'AminoAcids') {
+            return Promise.resolve(AminoAcids[0]);
+        }
+        else {
+            return Promise.resolve(Flashcards);
+        }
     }
 }

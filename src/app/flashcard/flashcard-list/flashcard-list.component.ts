@@ -7,25 +7,7 @@ import { FlashcardContentService } from '../flashcard-content.service';
     templateUrl: './flashcard-list.component.html'
 })
 
-export class FlashcardListComponent implements OnInit {
-  flashcards: Flashcard[];
-  frontSideUp: boolean = true;
-  currentCard: Flashcard[];
-  display: string;
-
-  constructor(private flashcardContentService: FlashcardContentService) { }
-  
-  cardClick(): void {
-    this.frontSideUp = !this.frontSideUp;
-  }
-
-  getFlashcards(): void {
-    this.flashcardContentService.getFlashcards().then(flashcards => this.flashcards = flashcards);
-  }
-
-  ngOnInit(): void {
-        this.getFlashcards();
-        this.currentCard = this.flashcards;
-        console.log(this.currentCard);
-  }
+export class FlashcardListComponent{
+  deck: Flashcard;
 }
+

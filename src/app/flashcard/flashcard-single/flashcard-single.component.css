@@ -18,3 +18,8 @@
     padding-left: 40px;
     padding-top: 10px;
 }
+
+img {
+    max-width: 80%;
+    max-height: 60%;
+}
