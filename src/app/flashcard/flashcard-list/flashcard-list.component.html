@@ -1,7 +1,20 @@
-<ul>
-    <li *ngFor="let flashcard of flashcards">
-        {{flashcard.frontContent}} {{flashcard.backContent}} {{flashcard.position}}
-    </li>
-</ul>
+<body>
+    <div class="list">
+        <ul>
+            <li *ngFor="let flashcard of deck">
+                <div class="flashcard">
+                    <div class="frontContent">
+                        <p *ngIf="flashcard.frontContentType == 'text'">{{flashcard.frontContent}}</p>
+                        <img *ngIf="flashcard.frontContentType == 'image'" src={{flashcard.frontContent}}/>
+                    </div>
+                    <div class="backContent">
+                        <p *ngIf="flashcard.backContentType == 'text'">{{flashcard.backContent}}</p>
+                        <img *ngIf="flashcard.backContentType == 'image'" src={{flashcard.backContent}}/>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
 
 

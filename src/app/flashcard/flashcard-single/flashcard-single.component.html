@@ -1,12 +1,18 @@
+<div class="modifiers">
+    <div><button (click)="getDeck('AminoAcids')">Structure</button></div>
+    <div><button (click)="getDeck('AminoAcids1')">Three letter</button></div>
+    <div><button (click)="getDeck('AminoAcids2')">Single letter</button></div> 
+    <div><button (click)="shuffleDeck()">Shuffle</button></div>     
+</div>
 <div class="flashcard">
-  <div class ="content" *ngIf="display" (click)="cardFlip()">
-    <p *ngIf="frontSideUp">{{display}}</p>
-    <a *ngIf="!frontSideUp"> <img src={{display}} /></a>
+  <div class ="card" *ngIf="display" (click)="cardFlip()">
+    <div class ="content">
+      <p *ngIf="isText">{{display}}</p>
+      <img *ngIf="isImage" src={{display}} />
+    </div>
   </div>
   <div class ="bottomButtons">
-    <div class="buttons">
       <button (click)="lastCardClick()">Previous</button>
       <button (click)="nextCardClick()">Next</button>
-    </div>
   </div>
 </div>

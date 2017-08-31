@@ -9,8 +9,17 @@ export class FlashcardContentService {
         if (flashcardset == 'AminoAcids') {
             return Promise.resolve(AminoAcids[0]);
         }
+        else if (flashcardset == 'AminoAcids1') {
+            return Promise.resolve(AminoAcids[1]);
+        }
+        else if (flashcardset == 'AminoAcids2') {
+            return Promise.resolve(AminoAcids[2]);
+        }
         else {
             return Promise.resolve(Flashcards);
         }
     }
+//    getFlashcardSets(): Promise<any> {
+
+//    }
 }
