@@ -1,9 +1,11 @@
 .flashcard {
-    margin: auto;
-    width: 500px;
+    margin-right: 2%;
+    margin-top: 5%;
+    width: 40%;
+    float: right;
 }
 .card {
-    border: 2px solid black;
+    border: 2px solid grey;
     text-align: center;
     font-size: 2em;  
     height: 250px;
@@ -23,6 +25,9 @@
     margin-top: 50px;
     max-width: 310px;
     max-height: 60%;
+}
+.btn-group {
+    align-self: auto;
 }
 
 .modifiers {

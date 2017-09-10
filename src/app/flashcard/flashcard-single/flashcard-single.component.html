@@ -1,18 +1,15 @@
 <div class="modifiers">
-    <div><button (click)="getDeck('AminoAcids')">Structure</button></div>
-    <div><button (click)="getDeck('AminoAcids1')">Three letter</button></div>
-    <div><button (click)="getDeck('AminoAcids2')">Single letter</button></div> 
     <div><button (click)="shuffleDeck()">Shuffle</button></div>     
 </div>
-<div class="flashcard">
+<div class="container flashcard">
   <div class ="card" *ngIf="display" (click)="cardFlip()">
     <div class ="content">
       <p *ngIf="isText">{{display}}</p>
       <img *ngIf="isImage" src={{display}} />
     </div>
   </div>
-  <div class ="bottomButtons">
-      <button (click)="lastCardClick()">Previous</button>
-      <button (click)="nextCardClick()">Next</button>
+  <div class="btn-group" role="group" aria-label="Navigation">
+      <button type="button" class="btn btn-secondary" (click)="lastCardClick()">Previous</button>
+      <button type="button" class="btn btn-secondary" (click)="nextCardClick()">Next</button>
   </div>
 </div>

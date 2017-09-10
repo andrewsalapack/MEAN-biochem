@@ -1,4 +1,5 @@
 import { NgModule }      from '@angular/core';
+import { AlertModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,37 +7,25 @@ import { AppComponent } from './app.component';
 import { FlashcardContentService } from './flashcard/flashcard-content.service';
 import { FlashcardListComponent } from './flashcard/flashcard-list/flashcard-list.component';
 import { FlashcardSingleComponent } from './flashcard/flashcard-single/flashcard-single.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FlashcardLandingComponent } from './flashcard/flashcard-landing/flashcard-landing.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   imports: [
-    RouterModule.forRoot([
-      {
-        path: 'flashcardlist',
-        component: FlashcardListComponent
-      },
-      {
-        path: 'flashcardsingle',
-        component: FlashcardSingleComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      }
-    ]),
+    AppRoutingModule,
+    BsDropdownModule.forRoot(),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AlertModule.forRoot()
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
     FlashcardListComponent,
-    FlashcardSingleComponent
+    FlashcardSingleComponent,
+    NavigationBarComponent,
+    FlashcardLandingComponent
   ],
   providers: [FlashcardContentService],
   bootstrap: [AppComponent]

@@ -1,20 +1,15 @@
-<body>
-    <div class="list">
-        <ul>
-            <li *ngFor="let flashcard of deck">
-                <div class="flashcard">
-                    <div class="frontContent">
-                        <p *ngIf="flashcard.frontContentType == 'text'">{{flashcard.frontContent}}</p>
-                        <img *ngIf="flashcard.frontContentType == 'image'" src={{flashcard.frontContent}}/>
-                    </div>
-                    <div class="backContent">
-                        <p *ngIf="flashcard.backContentType == 'text'">{{flashcard.backContent}}</p>
-                        <img *ngIf="flashcard.backContentType == 'image'" src={{flashcard.backContent}}/>
-                    </div>
-                </div>
-            </li>
-        </ul>
+<div class="container-fluid" id="cards">
+    <div class="list-group">
+        <div class="card" *ngFor="let flashcard of deck">
+            <img class="card-img-top" *ngIf="flashcard.frontContentType == 'image'" src={{flashcard.frontContent}} alt="Card image cap">
+            <img class="card-img-top" *ngIf="flashcard.backContentType == 'image'" src={{flashcard.backContent}} alt="Card image cap">                    
+            <div class="card-block">
+                <p class="card-text" *ngIf="flashcard.frontContentType == 'text'">{{flashcard.frontContent}}</p>
+                <p class="card-text" *ngIf="flashcard.backContentType == 'text'">{{flashcard.backContent}}</p>
+            </div>
+        </div>
     </div>
-</body>
+</div>
+
 
 

@@ -1,5 +1,5 @@
 import { Flashcard } from '../../flashcard'
-export const AminoAcids: [Flashcard[]] = [[
+export const AminoAcids_Name_Structure: Flashcard[] = [
     {frontContent: "Alanine \n ALA \n A", backContent: "assets/flashcard-assets/amino-acids/alanine.png", position: 0, frontContentType: "text", backContentType: "image"},
     {frontContent: "Arginine \n ARG \n R", backContent: "assets/flashcard-assets/amino-acids/arginine.png", position: 1, frontContentType: "text", backContentType: "image"},
     {frontContent: "Asparagine \n ASN \n N", backContent: "assets/flashcard-assets/amino-acids/asparagine.png", position: 2, frontContentType: "text", backContentType: "image"},
@@ -20,7 +20,8 @@ export const AminoAcids: [Flashcard[]] = [[
     {frontContent: "Tryptophan \n TRP \n W", backContent: "assets/flashcard-assets/amino-acids/tryptophan.png", position: 17, frontContentType: "text", backContentType: "image"},
     {frontContent: "Tyrosine \n TYR \n Y", backContent: "assets/flashcard-assets/amino-acids/tyrosine.png", position: 18, frontContentType: "text", backContentType: "image"},
     {frontContent: "Valine \n VAL \n V", backContent: "assets/flashcard-assets/amino-acids/valine.png", position: 19, frontContentType: "text", backContentType: "image"},
-] , [  
+]
+export const AminoAcids_3letter_NameSingle: Flashcard[] = [  
     {frontContent: "ALA", backContent: "Alanine \n A", position: 0, frontContentType: "text", backContentType: "text"},
     {frontContent: "ARG", backContent: "Arginine \n R", position: 1, frontContentType: "text", backContentType: "text"},
     {frontContent: "ASN", backContent: "Asparagine \n N", position: 2, frontContentType: "text", backContentType: "text"},
@@ -41,7 +42,8 @@ export const AminoAcids: [Flashcard[]] = [[
     {frontContent: "TRP", backContent: "Tryptophan \n W", position: 17, frontContentType: "text", backContentType: "text"},
     {frontContent: "TYR", backContent: "Tyrosine \n Y", position: 18, frontContentType: "text", backContentType: "text"},
     {frontContent: "VAL", backContent: "Valine \n V", position: 19, frontContentType: "text", backContentType: "text"},
-] , [
+]  
+export const AminoAcids_Single_Name3letter = [
     {frontContent: "A", backContent: "Alanine \n ALA", position: 0, frontContentType: "text", backContentType: "text"},
     {frontContent: "R", backContent: "Arginine \n ARG", position: 1, frontContentType: "text", backContentType: "text"},
     {frontContent: "N", backContent: "Asparagine \n ASN", position: 2, frontContentType: "text", backContentType: "text"},
@@ -62,5 +64,5 @@ export const AminoAcids: [Flashcard[]] = [[
     {frontContent: "W", backContent: "Tryptophan \n TRP", position: 17, frontContentType: "text", backContentType: "text"},
     {frontContent: "Y", backContent: "Tyrosine \n TYR", position: 18, frontContentType: "text", backContentType: "text"},
     {frontContent: "V", backContent: "Valine \n VAL", position: 19, frontContentType: "text", backContentType: "text"},
-]]
+]
 
