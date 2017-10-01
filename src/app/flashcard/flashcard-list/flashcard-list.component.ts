@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Flashcard } from '../flashcard';
 import { FlashcardContentService } from '../flashcard-content.service';
 
@@ -8,9 +8,9 @@ import { FlashcardContentService } from '../flashcard-content.service';
     styleUrls: ['./flashcard-list.component.css']
 })
 
-export class FlashcardListComponent implements OnInit {
+export class FlashcardListComponent implements OnInit, OnChanges {
   deck: Flashcard[];
-  set: string;
+  @Input() setName: string;
   displayType: string;
   isText: boolean;
   isImage: boolean;
@@ -28,16 +28,18 @@ export class FlashcardListComponent implements OnInit {
     }
   }
 
-  getFlashcards(set): void {
-    this.set = set;
-    this.flashcardContentService.getFlashcards(this.set).then(flashcards => {
+  getFlashcards(): void {
+    this.flashcardContentService.getFlashcards(this.setName).then(flashcards => {
       this.deck = flashcards,
       this.typeCheck();
     });
   }
 
   ngOnInit(): void {
-    this.set = "AminoAcids"
-    this.getFlashcards(this.set);
+    this.getFlashcards();
+  }
+
+  ngOnChanges(setName: any): void {
+    this.getFlashcards();
   }
 }

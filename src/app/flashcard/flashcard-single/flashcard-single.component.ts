@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Flashcard } from '../flashcard';
 import { FlashcardContentService } from '../flashcard-content.service';
 
@@ -9,12 +9,13 @@ import { FlashcardContentService } from '../flashcard-content.service';
 })
 
 
-export class FlashcardSingleComponent implements OnInit {
-  @Input() deck: Flashcard[];
+export class FlashcardSingleComponent implements OnInit, OnChanges {
+  deck: Flashcard[];
   frontSideUp: boolean = true;
   currentCard: Flashcard;
   display: string;
   set: string;
+  @Input() setName: string;
   displayType: string;
   isText: boolean;
   isImage: boolean;
@@ -30,6 +31,7 @@ export class FlashcardSingleComponent implements OnInit {
     this.frontSideUp = true;
     this.display = this.currentCard.frontContent;
     this.displayType = this.currentCard.frontContentType;
+    console.log(this.currentCard.position);
   }
 
   lastCardClick(): void {
@@ -41,6 +43,7 @@ export class FlashcardSingleComponent implements OnInit {
     this.frontSideUp = true;  
     this.display = this.currentCard.frontContent;
     this.displayType = this.currentCard.frontContentType;
+    console.log(this.currentCard.position);
   }
 
   cardFlip(): void {
@@ -75,34 +78,34 @@ export class FlashcardSingleComponent implements OnInit {
         this.deck[m] = this.deck[i];
         this.deck[i] = t;
       }
-    let r = this.deck.length - 1;
+    let r = this.deck.length;
       while (r){
-        this.deck[r].position = r;
+        this.deck[r - 1].position = r - 1;
         r--;
       }
-    this.currentCard =this.deck[0]
+    this.currentCard = this.deck[0]
     this.display = this.currentCard.frontContent;
     this.typeCheck();  
-    
+    console.log(this.deck)
   }
 
   getFlashcards(): void {
-    this.flashcardContentService.getFlashcards(this.set).then(flashcards => {
+    this.flashcardContentService.getFlashcards(this.setName).then(flashcards => {
       this.deck = flashcards,
       this.currentCard =this.deck[0]
       this.display = this.currentCard.frontContent;
       this.displayType = this.currentCard.frontContentType;
       this.typeCheck();
+      console.log(this.deck);
     });
   }
 
-  getDeck(deck: string): void {
-    this.set = deck;
-    this.getFlashcards();
+  ngOnInit(): void {
+        this.set = this.setName
+        this.getFlashcards();
   }
 
-  ngOnInit(): void {
-        this.set = "AminoAcids";
-        this.getFlashcards();
+  ngOnChanges(setName: any) {
+    this.getFlashcards();
   }
 }

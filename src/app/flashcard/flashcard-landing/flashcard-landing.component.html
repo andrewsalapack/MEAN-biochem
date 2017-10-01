@@ -1,14 +1,14 @@
-<flashcard-list *ngIf="isList == true"></flashcard-list>
-<flashcard-single *ngIf="isList == false"></flashcard-single>
+<flashcard-list *ngIf="isList == true" [setName] = "setName"></flashcard-list>
+<flashcard-single *ngIf="isList == false" [setName] = "setName"></flashcard-single>
 <div class="container main" *ngIf="isList == true">
     <div class="btn-group" dropdown>
       <button dropdownToggle type="button" class="btn btn-secondary dropdown-toggle">
         Amino Acids <span class="caret"></span>
       </button>
       <ul *dropdownMenu class="dropdown-menu" role="menu">
-        <li role="menuitem"><a class="dropdown-item" (click)="getFlashcards('AminoAcids')">Name - Structure</a></li>
-        <li role="menuitem"><a class="dropdown-item" (click)="getFlashcards('AminoAcids1')">Triplet - Name</a></li>
-        <li role="menuitem"><a class="dropdown-item" (click)="getFlashcards('AminoAcids2')">Single Letter - Name</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="chooseSet('AminoAcids')">Name - Structure</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="chooseSet('AminoAcids1')">Triplet - Name</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="chooseSet('AminoAcids2')">Single Letter - Name</a></li>
       </ul>
     </div>
     <button type="button" class="btn btn-success" (click)="switchView()">Study!</button>
