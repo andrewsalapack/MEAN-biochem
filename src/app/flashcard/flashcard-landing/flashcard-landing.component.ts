@@ -11,6 +11,7 @@ import { FlashcardSingleComponent } from '../flashcard-single/flashcard-single.c
 export class FlashcardLandingComponent implements OnInit {
   isList = true;
   setName: string;
+  buttonName: string;
 
   chooseSet(setName): void {
     this.setName = setName;
@@ -20,12 +21,15 @@ export class FlashcardLandingComponent implements OnInit {
   switchView(): void {
     if (this.isList) {
       this.isList = false;
+      this.buttonName = "View Deck";
     } else {
       this.isList = true;
+      this.buttonName = "Study";
     }
   }
 
   ngOnInit() {
     this.setName = "AminoAcids";
+    this.buttonName = "Study";
   }
 }
