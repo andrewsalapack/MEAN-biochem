@@ -1,6 +1,6 @@
-<flashcard-list *ngIf="listOrSingle == true"></flashcard-list>
-<flashcard-single *ngIf="listOrSingle == false"></flashcard-single>
-<div class="container main">
+<flashcard-list *ngIf="isList == true"></flashcard-list>
+<flashcard-single *ngIf="isList == false"></flashcard-single>
+<div class="container main" *ngIf="isList == true">
     <div class="btn-group" dropdown>
       <button dropdownToggle type="button" class="btn btn-secondary dropdown-toggle">
         Amino Acids <span class="caret"></span>
@@ -11,6 +11,6 @@
         <li role="menuitem"><a class="dropdown-item" (click)="getFlashcards('AminoAcids2')">Single Letter - Name</a></li>
       </ul>
     </div>
-    <button type="button" class="btn btn-success" (click)="switchListSingle()">Study!</button>
+    <button type="button" class="btn btn-success" (click)="switchView()">Study!</button>
 </div>
 

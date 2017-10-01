@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Flashcard } from '../flashcard';
 import { FlashcardContentService } from '../flashcard-content.service';
 
@@ -10,11 +10,11 @@ import { FlashcardContentService } from '../flashcard-content.service';
 
 
 export class FlashcardSingleComponent implements OnInit {
-  deck: Flashcard[];
+  @Input() deck: Flashcard[];
   frontSideUp: boolean = true;
   currentCard: Flashcard;
   display: string;
-  set: string ;
+  set: string;
   displayType: string;
   isText: boolean;
   isImage: boolean;

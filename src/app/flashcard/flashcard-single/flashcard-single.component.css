@@ -1,8 +1,6 @@
 .flashcard {
-    margin-right: 2%;
     margin-top: 5%;
     width: 40%;
-    float: right;
 }
 .card {
     border: 2px solid grey;

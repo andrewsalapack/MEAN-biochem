@@ -2,6 +2,7 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FlashcardListComponent } from '../flashcard-list/flashcard-list.component';
 import { FlashcardSingleComponent } from '../flashcard-single/flashcard-single.component';
+import { FlashcardContentService } from '../flashcard-content.service';
 
 @Component({
   selector: 'app-flashcard-landing',
@@ -9,24 +10,22 @@ import { FlashcardSingleComponent } from '../flashcard-single/flashcard-single.c
   styleUrls: ['./flashcard-landing.component.scss'],
 })
 export class FlashcardLandingComponent {
-  listOrSingle = true;
-
+  isList = true;
+  set: string;
   @ViewChild(FlashcardListComponent)
-  //@ViewChild(FlashcardSingleComponent)
-  
   private FlashcardListComponent: FlashcardListComponent;
-  //private FlashcardSingleComponent: FlashcardSingleComponent;
+  @ViewChild(FlashcardSingleComponent)
+  private FlashcardSingleComponent: FlashcardSingleComponent;
   
   getFlashcards(deck) {
-    this.FlashcardListComponent.getFlashcards(deck)
-    debugger
+    this.isList = true;
+    this.FlashcardListComponent.getFlashcards(deck);
   }
-
-  switchListSingle(): void {
-    if (this.listOrSingle) {
-      this.listOrSingle = false;
+  switchView(): void {
+    if (this.isList) {
+      this.isList = false;
     } else {
-      this.listOrSingle = true;
+      this.isList = true;
     }
   }
 

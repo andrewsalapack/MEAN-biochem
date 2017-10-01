@@ -1,6 +1,7 @@
 <div class="modifiers">
     <div><button (click)="shuffleDeck()">Shuffle</button></div>     
 </div>
+<a routerLink="/flashcards"><button type ="button" class="btn btn-secondary" >Back</button></a>
 <div class="container flashcard">
   <div class ="card" *ngIf="display" (click)="cardFlip()">
     <div class ="content">
