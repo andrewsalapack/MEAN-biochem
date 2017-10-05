@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Flashcard } from './flashcard';
-import { Flashcards } from './mock-flashcard-content';
 import { AminoAcids_Name_Structure } from './content-data/amino-acids/amino-acids.data'; 
 import { AminoAcids_3letter_NameSingle } from './content-data/amino-acids/amino-acids.data'; 
 import { AminoAcids_Single_Name3letter } from './content-data/amino-acids/amino-acids.data'; 
@@ -19,7 +18,7 @@ export class FlashcardContentService {
             return Promise.resolve(AminoAcids_Single_Name3letter);
         }
         else {
-            return Promise.resolve(Flashcards);
+            return Promise.resolve(AminoAcids_Name_Structure);
         }
     }
 //    getFlashcardSets(): Promise<any> {

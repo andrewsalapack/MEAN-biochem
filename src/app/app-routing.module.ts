@@ -6,7 +6,8 @@ import { FlashcardContentService } from './flashcard/flashcard-content.service';
 import { FlashcardListComponent } from './flashcard/flashcard-list/flashcard-list.component';
 import { FlashcardSingleComponent } from './flashcard/flashcard-single/flashcard-single.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-import { FlashcardLandingComponent } from './flashcard/flashcard-landing/flashcard-landing.component'
+import { FlashcardLandingComponent } from './flashcard/flashcard-landing/flashcard-landing.component';
+import { ReactioncardLandingComponent } from './reactioncard/reactioncard-landing/reactioncard-landing.component';
 
 const appRoutes: Routes = [
     {
@@ -14,8 +15,8 @@ const appRoutes: Routes = [
       component: FlashcardLandingComponent
     },
     {
-      path: 'flashcardstudy',
-      component: FlashcardSingleComponent
+      path: 'reactioncards',
+      component: ReactioncardLandingComponent
     }
 ]
 @NgModule({
